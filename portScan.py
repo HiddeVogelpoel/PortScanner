@@ -11,12 +11,10 @@ threads = []
 
 def scan(port):
 	s = socket.socket()
-	result = s.connect_ex((host,port))
-	#print('working on port > '+(str(port)))      
+	result = s.connect_ex((host,port))     
 	if result == 0:
 		counting_open.append(port)
 		if port <= 25535:
-			#service_open.append(socket.getservbyport(port))
 			try:
 				service = socket.getservbyport(port)
 			except:
@@ -24,11 +22,9 @@ def scan(port):
 			print('PORT ' + str(port) + '\n  -' + service)
 		else:
 			print('Port not recognized')
-		#print((str(port))+' -> open') 
 		s.close()
 	else:
 		counting_close.append(port)
-		#print((str(port))+' -> close') 
 		s.close()
 
 for i in range(from_port, to_port+1):
@@ -37,6 +33,3 @@ for i in range(from_port, to_port+1):
 	t.start()
 	
 [x.join() for x in threads]
-
-#print(counting_open)
-#print(service_open)
