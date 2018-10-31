@@ -7,4 +7,5 @@ For this you will need:
   * Internet connection
   
 # WARNING!
-Using this port scanner on servers with the owner's permission, I am not responsible!
+I do not take reponsibility for YOUR USAGE!
+Do not use this software on a server without the owner's permission.
